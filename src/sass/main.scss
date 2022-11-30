@@ -1,0 +1,61 @@
+body {
+    align-items: center;
+    background-color: $light;
+    color: $dark;
+    display: flex;
+    flex-direction: column;
+    font-family: $font;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.3em;
+}
+h4 {
+    font-size: 1em;
+}
+h5 {
+    font-size: 0.8em;
+}
+h6 {
+    font-size: 0.7em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+@media only screen and (max-width: 700px) {
+   
+}
+@media only screen and (max-width: 500px) {
+    
+}
+@media only screen and (max-width: 400px) {
+   
+}
+@media only screen and (min-width: 960px) {
+}
+
+@media only screen and (min-width: 1280px) {
+}
+
+@media only screen and (min-width: 1920px) {
+}
