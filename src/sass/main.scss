@@ -1,61 +1,73 @@
 body {
     align-items: center;
+    align-items: stretch;
     background-color: $light;
     color: $dark;
     display: flex;
     flex-direction: column;
-    font-family: $font;
+    font-family: $family-sans-serif;
+    min-height: 100vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    @include tablet {
+        width: $containerWidth;
+    }
+}
+main {
+    background-color: $light;
+    display: flex;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    min-height: 100%;
+    padding: 0 20px;
+    width: 100%;
+    @include tablet {
+        padding: 0;
+    }
+
+    nav {
+        background-color: $main2;
+        padding: 20px;
+        width: 200px;
+        .links {
+            padding-bottom: 20px;
+            a {
+                display: block;
+            }
+        }
+        .projects-nav {
+            border-top: solid 1px;
+            padding-top: 20px;
+            .projects-nav-title{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-}
-h1 {
-    font-size: 2em;
-}
-h2 {
-    font-size: 1.5em;
-}
-h3 {
+header {
+    align-items: center;
+    background: linear-gradient(90deg, $bright 0%, $bright2 100%);
+    color: white;
+    display: flex;
     font-size: 1.3em;
-}
-h4 {
-    font-size: 1em;
-}
-h5 {
-    font-size: 0.8em;
-}
-h6 {
-    font-size: 0.7em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
     font-weight: bold;
-}
-@media only screen and (max-width: 700px) {
-   
-}
-@media only screen and (max-width: 500px) {
-    
-}
-@media only screen and (max-width: 400px) {
-   
-}
-@media only screen and (min-width: 960px) {
+    height: 60px;
+    padding-left: 40px;
 }
 
-@media only screen and (min-width: 1280px) {
-}
-
-@media only screen and (min-width: 1920px) {
+footer {
+    background-color: $main;
+    padding: 20px;
 }

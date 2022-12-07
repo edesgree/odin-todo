@@ -4,23 +4,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: {
-        index: './src/index.js'
+    entry:  './src/index.js',
+    output: {
+        filename: 'js/bundle.js',
+        path: path.resolve(__dirname, 'dist')
+        //clean: true
     },
     devtool: 'inline-source-map',
     devServer: {
         static: './dist',
         hot: true,
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            title: 'Todo app',
-            template: './src/indexTemplate.html',
-        }),
-        new MiniCssExtractPlugin({
-            filename: 'css/styles.css',
-        })
-    ],
     module: {
         rules: [
             {
@@ -30,17 +24,18 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
 
                     // Translates CSS into CommonJS
-                    "css-loader",
+                    {
+                        loader: 'css-loader'
+                      },
 
                     // Compiles Sass to CSS
                     {
                         loader: 'sass-loader',
                         options: {
-                            sassOptions: {
-                                includePaths: [path.resolve(__dirname, './sass')]
-                            }
-                        },
-                    },
+                          sourceMap: true,
+                          // options...
+                        }
+                      }
                 ],
             },
             {
@@ -52,10 +47,14 @@ module.exports = {
             },
         ],
     },
-    output: {
-        filename: 'js/main.js',
-        path: path.resolve(__dirname, 'dist'),
-        clean: true
-    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Todo app',
+            template: './src/indexTemplate.html',
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'css/styles.css',
+        })
+    ],
     watch: true
 };

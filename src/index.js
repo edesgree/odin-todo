@@ -1,4 +1,4 @@
-import './sass/style.scss';
+require('./sass/style.scss');
 
 import { renderHeader } from "./js/header";
 import { renderFooter } from "./js/footer";
