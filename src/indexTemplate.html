@@ -1,51 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>hey</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div id="content"></div>
     <header>Le todo app</header>
 
     <main>
-        <nav>
-            <div class="links">
-                <a href="">All</a>
-                <a href="">Today</a>
-                <a href="">Week</a>
-                <a href="">Important</a>
-                <a href="">Completed</a>
-            </div>
-            <div class="projects-nav">
-                <div class="projects-nav-title">
-                    <span class="subtitle"> Projects(<span class="project-nb"></span>)</span>
-                    <a href="">add+</a>
-                </div>
-                <div class="projects-nav-links">
-                    <a href="" class="project-link">
-                        <span class="project-title">Project Title</span>
-                        <div class="project-actions">
-                            <span class="project-action-edit">
-                                edit</span>
-                            <span class="project-action-delete">del
-
-                            </span>
-                        </div>
-                    </a>
-
-                </div>
-            </div>
-        </nav>
-        <div class="content">
-            le main
+      <nav>
+        <div class="links">
+          <a href="">All</a>
+          <a href="">Today</a>
+          <a href="">Week</a>
+          <a href="">Important</a>
+          <a href="">Completed</a>
         </div>
+        <div class="projects-nav">
+          <div class="all-tasks">
+            <h2 class="task-list-title">My lists</h2>
+            <ul class="task-list" data-lists></ul>
+
+            <form action="" data-new-list-form>
+              <input
+                type="text"
+                class="new-input list"
+                placeholder="new list name"
+                aria-label="new list name"
+                data-new-list-input
+              />
+              <button class="btn create" aria-label="create new list">+</button>
+            </form>
+          </div>
+
+          <div class="projects-nav-title">
+            <span class="subtitle">
+              Projects(<span class="project-nb"></span>)</span
+            >
+            <a href="">add+</a>
+          </div>
+          <div class="projects-nav-links">
+            <a href="" class="project-link">
+              <span class="project-title">Project Title</span>
+              <div class="project-actions">
+                <span class="project-action-edit"> edit</span>
+                <span class="project-action-delete">del </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="content">
+        le main
+        <div class="todo-list" data-list-display-container>
+          <div class="todo-header">
+            <h2 class="list-title" data-list-title></h2>
+            <p class="task-count" data-list-count>3 tasks remaining</p>
+          </div>
+
+          <div class="todo-body">
+            <div class="tasks" data-tasks></div>
+
+            <div class="new-task-creator">
+              <form action="" data-new-task-form>
+                <input
+                  type="text"
+                  class="new-input task"
+                  placeholder="new task name"
+                  aria-label="new task name"
+                  data-new-task-input
+                />
+                <button class="btn create" aria-label="create new task">
+                  +
+                </button>
+              </form>
+            </div>
+
+            <div class="delete-stuff">
+              <button class="btn-delete" data-clear-complete-tasks-button>
+                Clear completed tasks
+              </button>
+              <button class="btn-delete" data-delete-list-button>
+                Delete list
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>le footer</footer>
     <!--
@@ -184,6 +230,13 @@
 
     </div>
 -->
-</body>
-
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
+  </body>
 </html>
